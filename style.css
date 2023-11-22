@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Ruluko&display=swap");
+
+body {
+  background-color: #131316;
+  color: #fff;
+  font-family: "Ruluko", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+}
+
+/* Handling the animations with CSS transitions */
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 5s;
+  transform: translateX(-100%);
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+/* For doing things like shifting in multple elements in a row. Target the class children. This is on top of the transitions displayed above.
+ # Parent container
+.logos {
+    display:flex;
+}
+
+# Children
+.logo:nth-child(2) {
+    transition-delay: 200ms;
+}
+.logo:nth-child(3) {
+    transition-delay: 400ms;
+}
+.logo:nth-child(4) {
+    transition-delay: 600ms
+}
+*/
+
+/* Not everyone like animations being repeated. */
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
